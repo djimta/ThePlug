@@ -1,6 +1,8 @@
 import discord
+import os
 
-TOKEN = 'MTIyMTA1MTI3NDQzMTI5OTYyNQ.GuiNEj.hEnK5hVSTC-wGVFJ9GRhJQ6Fpx9zQ3razGDZNE'
+discord_bot_token = os.environ.get('DISCORD_BOT_TOKEN')
+
 
 # Définir les intentions de votre bot
 intents = discord.Intents.default()
@@ -108,4 +110,4 @@ async def on_message(message):
         
         await destination_channel.send(message_to_send)
 
-client.run(TOKEN)
+client.run(discord_bot_token)
